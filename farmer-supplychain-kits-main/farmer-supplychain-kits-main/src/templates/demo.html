@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Page</title>
+    <style>
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('../static/images/img.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 10px 0;
+    }
+    .navbar a {
+        color: #007bff;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+    }
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+    .content {
+        display: none;
+        padding: 20px;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+        flex: 1;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        max-width: 45%;
+        margin: auto;
+    }
+    .container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .info-box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .info-box .item {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        flex: 1;
+        margin: 0 10px;
+    }
+    .item img {
+    max-width: 50%;
+    background-image: url('../static/images/apple.jpeg');
+    background-image: url('../static/images/grapes.jpeg');
+    background-image: url('../static/images/carrot.jpeg');
+    height: auto;
+    margin-bottom: 10px;
+}
+
+</style>
+
+    
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" onclick="toggleAbout()">About Fruits and Vegetables</a>
+        <a href="#" onclick="toggleProblems()">Problems</a>
+        <a href="#" onclick="toggleAboutPage()">About Page</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+    <div id="aboutContent" class="content">
+        <div class="container">
+            <h2>About Fruits and Vegetables</h2>
+            <p>Fruits and vegetables are an essential part of a healthy diet. They are rich in vitamins, minerals, and antioxidants that help maintain good health and prevent various diseases.</p>
+            <p>Eating a variety of fruits and vegetables every day can provide numerous health benefits, including improved digestion, better heart health, and reduced risk of chronic diseases like cancer and diabetes.</p>
+            <p>It's recommended to consume at least five servings of fruits and vegetables daily to meet your nutritional needs and maintain optimal health.</p>
+        </div>
+    </div>
+    
+    <div id="problemsContent" class="content" style="display: none;">
+        <div class="container">
+            <h2>Health Problems Related to Fruits and Vegetables</h2>
+            <p><strong>For Men:</strong> Men may experience prostate enlargement or urinary tract issues due to certain fruits and vegetables high in oxalates.</p>
+            <p><strong>For Women:</strong> Women may develop urinary tract infections or kidney stones due to fruits and vegetables high in oxalates.</p>
+        </div>
+    </div>
+    
+    <div id="aboutPageContent" class="content" style="display: none;">
+        <div class="info-box">
+            <div class="item">
+                <h3>Apple</h3>
+                <img src="../static/images/apple.jpeg" alt="Apple">
+                <p>Apples are a good source of fiber and vitamin C. They are low in calories and rich in antioxidants. Apples can help improve heart health and aid in weight loss.</p>
+            </div>
+            <div class="item">
+                <h3>Grapes</h3>
+                <img src="../static/images/grapes.jpeg" alt="Grapes">
+                <p>Grapes are high in antioxidants and vitamins, such as vitamin C and vitamin K. They may help lower blood pressure and reduce the risk of heart disease.</p>
+            </div>
+            <div class="item">
+                <h3>Carrot</h3>
+                <img src="../static/images/carrot.jpeg" alt="Carrot">
+                <p>Carrots are rich in beta-carotene, which is converted into vitamin A in the body. They promote good vision and may reduce the risk of certain cancers.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleAbout() {
+            var aboutContent = document.getElementById("aboutContent");
+            var problemsContent = document.getElementById("problemsContent");
+            var aboutPageContent = document.getElementById("aboutPageContent");
+            
+            aboutContent.style.display = "block";
+            problemsContent.style.display = "none";
+            aboutPageContent.style.display = "none";
+        }
+    
+        function toggleProblems() {
+            var aboutContent = document.getElementById("aboutContent");
+            var problemsContent = document.getElementById("problemsContent");
+            var aboutPageContent = document.getElementById("aboutPageContent");
+            
+            aboutContent.style.display = "none";
+            problemsContent.style.display = "block";
+            aboutPageContent.style.display = "none";
+        }
+    
+        function toggleAboutPage() {
+            var aboutContent = document.getElementById("aboutContent");
+            var problemsContent = document.getElementById("problemsContent");
+            var aboutPageContent = document.getElementById("aboutPageContent");
+            
+            aboutContent.style.display = "none";
+            problemsContent.style.display = "none";
+            aboutPageContent.style.display = "block";
+        }
+    </script>
+    
+    
+</body>
+</html>
